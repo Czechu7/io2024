@@ -3,9 +3,10 @@ import Button from 'react-bootstrap/Button';
 
 function Mechanik() {
   return (
-    <div className="Mechanik">
+    <div>
       <h1>Mechanik</h1>
-      <Button type="submit"  href="/" >powrót</Button>{' '}
+    <div><Button type="submit"  href="/rejestrzlecenmechanik" >RejestrZlecenMechanik</Button></div>
+    <div><Button type="submit"  href="/kosztorysmechanik" >KosztorysMechanik</Button></div>
     </div>
   );
 }
