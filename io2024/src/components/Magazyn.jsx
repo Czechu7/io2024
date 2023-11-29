@@ -1,13 +1,21 @@
 import '../css/Magazyn.css'
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/esm/Button';
+import logo from '../assets/cmg-logo.png';
+import {Link} from 'react-router-dom';
+import MagazynHeader from './magazyn/MagazynHeader';
 
 function Magazyn() {
-  return (
-    <div className="Magazyn">
-      <h1>Magazyn</h1>
-      <Button type="submit"  href="/" >powrót</Button>{' '}
+ return (
+    <body>
+    <MagazynHeader></MagazynHeader>
+    <div class="btn-container">
+        <Button className="btnm" href="rejestrzlecenmagazyn">Rejestr Zleceń</Button>
+        <Button className="btnm" href="rejestrzlecenmagazyn">Kosztorys</Button>
+        <Button className="btnm" href="rejestrzlecenmagazyn">Zamówienia</Button>
+        <Button className="btnm" href="rejestrzlecenmagazyn">Rejestr magazynowy</Button>
     </div>
-  );
+</body>
+ );
 }
 
 export default Magazyn

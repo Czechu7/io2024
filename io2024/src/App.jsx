@@ -5,6 +5,7 @@ import Mechanik from './components/Mechanik.jsx'
 import Magazyn from './components/Magazyn.jsx'
 import Kierownik from './components/Kierownik.jsx'
 import Recepcja from './components/Recepcja.jsx'
+import RejestrZlecenMagazyn from './components/magazyn/RejestrZlecenMagazyn.jsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/magazyn' element={<Magazyn/>} />
         <Route path='/kierownik' element={<Kierownik/>} />
         <Route path='/recepcja' element={<Recepcja/>} />
+        <Route path='/rejestrzlecenmagazyn' element={<RejestrZlecenMagazyn/>} />
       </Routes>
     </Router>
   );
