@@ -10,6 +10,12 @@ import KosztorysMechanik from './components/mechanik/KosztorysMechanik.jsx';
 import RejestrZlecenMagazyn from './components/magazyn/RejestrZlecenMagazyn.jsx';
 import LoginPage from './components/auth/LoginPage.jsx';
 import RejestrKlientowRecepcja from './components/recepcja/RejestrKlientowRecepcja.jsx';
+import RejestrPracownikow from "./components/kierownik/RejestrPracownikow.jsx";
+import RejestrZlecenKierownik from "./components/kierownik/RejestrZlecenKierownik.jsx";
+import RejestrFinansow from "./components/kierownik/RejestrFinansow.jsx";
+import DodanieNowegoZlecenia from "./components/kierownik/DodanieNowegoZlecenia.jsx";
+import HistoriaZlecen from "./components/kierownik/HistoriaZlecen.jsx";
+import ZamowioneCzesci from "./components/kierownik/ZamowioneCzesci.jsx";
 
 function App() {
   return (
@@ -25,9 +31,21 @@ function App() {
         <Route path='/kosztorysmechanik' element={<KosztorysMechanik/>} />
         <Route path='/rejestrzlecenmagazyn' element={<RejestrZlecenMagazyn/>} />
         <Route path='/rejestrklientowrecepcja' element={<RejestrKlientowRecepcja/>} />
+        <Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
+				<Route
+					path="/rejestrzlecenkierownik"
+					element={<RejestrZlecenKierownik />}
+				/>
+				<Route path="/rejestrfinansow" element={<RejestrFinansow />} />
+				<Route
+					path="/dodanienowegozlecenia"
+					element={<DodanieNowegoZlecenia />}
+				/>
+				<Route path="/zamowioneczesci" element={<ZamowioneCzesci />} />
+				<Route path="/historiazlecen" element={<HistoriaZlecen />} />
       </Routes>
     </Router>
   );
 }
 
-export default App
+export default App;
