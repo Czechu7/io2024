@@ -1,0 +1,29 @@
+/* LoginPage.css */
+
+.login-form {
+    max-width: 600px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+
+  
+  .login-button {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .login-button:hover {
+    background-color: #2980b9;
+  }
+  
