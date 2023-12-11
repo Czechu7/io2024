@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const RKEditClient = ({ onClientUpdated }) => {
-	const { clientId } = useParams();
+const KierownikEditWorker = ({ onWorkerUpdated }) => {
+	const { workerId } = useParams();
 	const navigate = useNavigate();
-	const [clientData, setClientData] = useState({
+	const [workerData, setWorkerData] = useState({
 		firstName: "",
 		lastName: "",
+		age: "",
+		position: "",
+		salary: "",
 		phoneNumber: "",
 		email: "",
 	});
@@ -17,17 +20,17 @@ const RKEditClient = ({ onClientUpdated }) => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					`https://carmategarage-58a29-default-rtdb.europe-west1.firebasedatabase.app/clients/${clientId}.json`
+					`https://carmategarage-58a29-default-rtdb.europe-west1.firebasedatabase.app/Workers/${workerId}.json`
 				);
 
 				if (!response.ok) {
-					throw new Error("Failed to fetch client");
+					throw new Error("Failed to fetch worker");
 				}
 
 				const data = await response.json();
 
 				if (data) {
-					setClientData(data);
+					setWorkerData(data);
 				}
 			} catch (error) {
 				setError(error.message);
@@ -37,34 +40,34 @@ const RKEditClient = ({ onClientUpdated }) => {
 		};
 
 		fetchData();
-	}, [clientId]);
+	}, [workerId]);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setClientData((prevData) => ({
+		setWorkerData((prevData) => ({
 			...prevData,
 			[name]: value,
 		}));
 	};
 
-	const handleUpdateClient = async () => {
+	const handleUpdateWorker = async () => {
 		try {
 			const response = await fetch(
-				`https://carmategarage-58a29-default-rtdb.europe-west1.firebasedatabase.app/clients/${clientId}.json`,
+				`https://carmategarage-58a29-default-rtdb.europe-west1.firebasedatabase.app/Workers/${workerId}.json`,
 				{
 					method: "PATCH",
 					headers: {
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify(clientData),
+					body: JSON.stringify(workerData),
 				}
 			);
 
 			if (!response.ok) {
-				throw new Error("Failed to update client");
+				throw new Error("Failed to update worker");
 			}
 
-			onClientUpdated(); // Informujemy o aktualizacji klienta
+			onWorkerUpdated(); // Informujemy o aktualizacji klienta
 			navigate(-1); // Powrót do poprzedniej lokalizacji
 		} catch (error) {
 			setError(error.message);
@@ -81,13 +84,13 @@ const RKEditClient = ({ onClientUpdated }) => {
 
 	return (
 		<div>
-			<h1>Edycja klienta</h1>
+			<h1>Edycja pracownika</h1>
 			<label>
 				Imię:
 				<input
 					type="text"
 					name="firstName"
-					value={clientData.firstName}
+					value={workerData.firstName}
 					onChange={handleChange}
 				/>
 			</label>
@@ -97,7 +100,37 @@ const RKEditClient = ({ onClientUpdated }) => {
 				<input
 					type="text"
 					name="lastName"
-					value={clientData.lastName}
+					value={workerData.lastName}
+					onChange={handleChange}
+				/>
+			</label>
+			<br />
+			<label>
+				Wiek:
+				<input
+					type="text"
+					name="age"
+					value={workerData.age}
+					onChange={handleChange}
+				/>
+			</label>
+			<br />
+			<label>
+				Stanowisko:
+				<input
+					type="text"
+					name="position"
+					value={workerData.position}
+					onChange={handleChange}
+				/>
+			</label>
+			<br />
+			<label>
+				Wynagrodzenie:
+				<input
+					type="text"
+					name="salary"
+					value={workerData.salary}
 					onChange={handleChange}
 				/>
 			</label>
@@ -107,7 +140,7 @@ const RKEditClient = ({ onClientUpdated }) => {
 				<input
 					type="tel"
 					name="phoneNumber"
-					value={clientData.phoneNumber}
+					value={workerData.phoneNumber}
 					onChange={handleChange}
 				/>
 			</label>
@@ -117,14 +150,14 @@ const RKEditClient = ({ onClientUpdated }) => {
 				<input
 					type="email"
 					name="email"
-					value={clientData.email}
+					value={workerData.email}
 					onChange={handleChange}
 				/>
 			</label>
 			<br />
-			<button onClick={handleUpdateClient}>Zapisz zmiany</button>
+			<button onClick={handleUpdateWorker}>Zapisz zmiany</button>
 		</div>
 	);
 };
 
-export default RKEditClient;
+export default KierownikEditWorker;

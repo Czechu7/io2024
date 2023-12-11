@@ -1,21 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './css/App.css'
-import MainPage from './components/MainPage.jsx'
-import Mechanik from './components/Mechanik.jsx'
-import Magazyn from './components/Magazyn.jsx'
-import Kierownik from './components/Kierownik.jsx'
-import Recepcja from './components/Recepcja.jsx'
-import RejestrZlecenMechanik from './components/mechanik/RejestrZlecenMechanik.jsx';
-import KosztorysMechanik from './components/mechanik/KosztorysMechanik.jsx';
-import RejestrZlecenMagazyn from './components/magazyn/RejestrZlecenMagazyn.jsx';
-import LoginPage from './components/auth/LoginPage.jsx';
-import RejestrKlientowRecepcja from './components/recepcja/RejestrKlientowRecepcja.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./css/App.css";
+import MainPage from "./components/MainPage.jsx";
+import Mechanik from "./components/Mechanik.jsx";
+import Magazyn from "./components/Magazyn.jsx";
+import Kierownik from "./components/Kierownik.jsx";
+import Recepcja from "./components/Recepcja.jsx";
+import RejestrZlecenMechanik from "./components/mechanik/RejestrZlecenMechanik.jsx";
+import KosztorysMechanik from "./components/mechanik/KosztorysMechanik.jsx";
+import RejestrZlecenMagazyn from "./components/magazyn/RejestrZlecenMagazyn.jsx";
+import LoginPage from "./components/auth/LoginPage.jsx";
+import RejestrKlientowRecepcja from "./components/recepcja/RejestrKlientowRecepcja.jsx";
 import RejestrPracownikow from "./components/kierownik/RejestrPracownikow.jsx";
 import RejestrZlecenKierownik from "./components/kierownik/RejestrZlecenKierownik.jsx";
 import RejestrFinansow from "./components/kierownik/RejestrFinansow.jsx";
 import DodanieNowegoZlecenia from "./components/kierownik/DodanieNowegoZlecenia.jsx";
 import HistoriaZlecen from "./components/kierownik/HistoriaZlecen.jsx";
 import ZamowioneCzesci from "./components/kierownik/ZamowioneCzesci.jsx";
+import RKEditClient from "./components/recepcja/RKEditClient.jsx";
+import KierownikEditWorker from "./components/kierownik/KierownikEditWorker.jsx";
 import MagazynEditClient from './components/recepcja/RKEditClient.jsx';
 import RejestrMagazynowy from './components/magazyn/RejestrMagazynowy.jsx';
 import MagazynEditPart from './components/magazyn/MagazynEditPart.jsx';
@@ -53,10 +55,11 @@ function App() {
         <Route path='/editpart/:partId' element={<MagazynEditPart onClientUpdated={() => {}} />} />
         <Route path='/magazynzamowienia' element={<MagazynZamowienia />} />
         <Route path='/editorder/:orderId' element={<MagazynEditOrder onClientUpdated={() => {}} />} />
-
-      </Routes>
-    </Router>
-  );
+        <Route path="/editworker/:workerId" element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
+				/>
+			</Routes>
+		</Router>
+	);
 }
 
 export default App;
