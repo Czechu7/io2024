@@ -56,12 +56,12 @@ function RejestrZlecenMagazyn() {
       </Table>
 
       <div>
-        <Button type="submit" href="/magazyn">
+        <Button type="button" href="/magazyn">
           Magazyn
         </Button>
       </div>
       <div>
-        <Button type="submit" href="/">
+        <Button type="button" href="/home">
           Strona Główna
         </Button>
       </div>
