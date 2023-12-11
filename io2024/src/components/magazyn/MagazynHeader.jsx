@@ -11,7 +11,7 @@ function MagazynHeader() {
      <Button className="back-button" onClick={() => navigate(-1)}>Powrót</Button>
      <h1>Magazyn</h1>
      <div> 
-     <Link to="/">
+     <Link to="/home">
      <img className="logo" src={logo} alt="Logo"/> 
      </Link>
      </div> 

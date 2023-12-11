@@ -1,0 +1,38 @@
+.Table {
+    width: 80%;
+    margin: 20px auto; /* Center the table and add margin */
+    border-collapse: collapse;
+}
+
+.Table th {
+    background-color: #2b9c2f;
+    text-align: left;
+    padding: 15px; /* Increase padding for better spacing */
+}
+
+.Table td,
+.Table th {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better spacing */
+}
+
+.Table tbody tr:hover {
+    background-color: rgb(141, 168, 90);
+}
+
+.Table tbody td:first-child {
+    font-weight: bold;
+}
+
+.RejestrZlecenMagazyn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.RejestrZlecenMagazyn h1 {
+    font-size: 24px;
+}
+
+.RejestrZlecenMagazyn Button {
+    margin-top: 10px;
+}

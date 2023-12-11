@@ -18,39 +18,28 @@ import HistoriaZlecen from "./components/kierownik/HistoriaZlecen.jsx";
 import ZamowioneCzesci from "./components/kierownik/ZamowioneCzesci.jsx";
 import RKEditClient from "./components/recepcja/RKEditClient.jsx";
 import KierownikEditWorker from "./components/kierownik/KierownikEditWorker.jsx";
+import MagazynEditClient from './components/recepcja/RKEditClient.jsx';
+import RejestrMagazynowy from './components/magazyn/RejestrMagazynowy.jsx';
+import MagazynEditPart from './components/magazyn/MagazynEditPart.jsx';
+import MagazynZamowienia from './components/magazyn/MagazynZamowienia.jsx';
+import MagazynEditOrder from './components/magazyn/MagazynEditOrder.jsx';
 
 function App() {
-	return (
-		<Router>
-			<Routes>
-				<Route path="/" element={<LoginPage />} />
-				<Route path="/home" element={<MainPage />} />
-				<Route path="/mechanik" element={<Mechanik />} />
-				<Route path="/magazyn" element={<Magazyn />} />
-				<Route path="/kierownik" element={<Kierownik />} />
-				<Route path="/recepcja" element={<Recepcja />} />
-				<Route
-					path="/rejestrzlecenmechanik"
-					element={<RejestrZlecenMechanik />}
-				/>
-				<Route path="/kosztorysmechanik" element={<KosztorysMechanik />} />
-				<Route
-					path="/rejestrzlecenmagazyn"
-					element={<RejestrZlecenMagazyn />}
-				/>
-				<Route
-					path="/rejestrklientowrecepcja"
-					element={<RejestrKlientowRecepcja />}
-				/>
-				<Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
-				<Route
-					path="/edit/:clientId"
-					element={<RKEditClient onClientUpdated={() => {}} />}
-				/>
-				<Route
-					path="/editworker/:workerId"
-					element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
-				/>
+  return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<LoginPage/>} />
+        <Route path='/home' element={<MainPage/>} />
+        <Route path='/mechanik' element={<Mechanik/>} />
+        <Route path='/magazyn' element={<Magazyn/>} />
+        <Route path='/kierownik' element={<Kierownik/>} />
+        <Route path='/recepcja' element={<Recepcja/>} />
+        <Route path='/rejestrzlecenmechanik' element={<RejestrZlecenMechanik/>} />
+        <Route path='/kosztorysmechanik' element={<KosztorysMechanik/>} />
+        <Route path='/rejestrzlecenmagazyn' element={<RejestrZlecenMagazyn/>} />
+        <Route path='/rejestrklientowrecepcja' element={<RejestrKlientowRecepcja/>} />
+        <Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
+        <Route path='/edit/:clientId' element={<MagazynEditClient onClientUpdated={() => {}} />} />
 				<Route
 					path="/rejestrzlecenkierownik"
 					element={<RejestrZlecenKierownik />}
@@ -62,6 +51,12 @@ function App() {
 				/>
 				<Route path="/zamowioneczesci" element={<ZamowioneCzesci />} />
 				<Route path="/historiazlecen" element={<HistoriaZlecen />} />
+        <Route path='/rejestrmagazynowy' element={<RejestrMagazynowy />} />
+        <Route path='/editpart/:partId' element={<MagazynEditPart onClientUpdated={() => {}} />} />
+        <Route path='/magazynzamowienia' element={<MagazynZamowienia />} />
+        <Route path='/editorder/:orderId' element={<MagazynEditOrder onClientUpdated={() => {}} />} />
+        <Route path="/editworker/:workerId" element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
+				/>
 			</Routes>
 		</Router>
 	);
