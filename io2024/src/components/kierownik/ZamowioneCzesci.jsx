@@ -1,13 +1,14 @@
 import "../../css/ZamowioneCzesci.css";
 import Button from "react-bootstrap/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 function ZamowioneCzesci() {
 	return (
-		<div>
-			<Button type="submit" href="/">
-				powrót
-			</Button>{" "}
-		</div>
+		<Link to={"/rejestrzlecenkierownik"}>
+			<div>
+				<Button type="button">Powrót do rejestru zleceń</Button>
+			</div>
+		</Link>
 	);
 }
 
