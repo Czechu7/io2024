@@ -6,7 +6,7 @@
 
 /* Stylizacja nagłówka tabelki */
 .Table th {
-	background-color: #f2f2f2;
+	background-color: #f2f2f29a;
 	text-align: left;
 	padding: 10px;
 }

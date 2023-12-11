@@ -16,6 +16,7 @@ import RejestrFinansow from "./components/kierownik/RejestrFinansow.jsx";
 import DodanieNowegoZlecenia from "./components/kierownik/DodanieNowegoZlecenia.jsx";
 import HistoriaZlecen from "./components/kierownik/HistoriaZlecen.jsx";
 import ZamowioneCzesci from "./components/kierownik/ZamowioneCzesci.jsx";
+import RKEditClient from './components/recepcja/RKEditClient.jsx';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/rejestrzlecenmagazyn' element={<RejestrZlecenMagazyn/>} />
         <Route path='/rejestrklientowrecepcja' element={<RejestrKlientowRecepcja/>} />
         <Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
+        <Route path='/edit/:clientId' element={<RKEditClient onClientUpdated={() => {}} />} />
 				<Route
 					path="/rejestrzlecenkierownik"
 					element={<RejestrZlecenKierownik />}
