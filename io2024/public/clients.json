@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "firstName": "Andrzej",
+      "lastName": "Jankowski",
+      "phoneNumber": "528990527",
+      "email": "andrzejek77@onet.pl"
+    },
+    {
+      "id": 2,
+      "firstName": "Maciej",
+      "lastName": "Kowalik",
+      "phoneNumber": "733636527",
+      "email": "maciekkowalik@gmail.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Patrycja",
+      "lastName": "Smutowska",
+      "phoneNumber": "723467767",
+      "email": "patrycja02@interia.pl"
+    },
+    {
+      "id": 4,
+      "firstName": "Kamil",
+      "lastName": "Drożdzek",
+      "phoneNumber": "822421767",
+      "email": "kamilek01@o2.pl"
+    }
+  ]
+  
