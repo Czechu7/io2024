@@ -17,4 +17,4 @@ function MagazynZamowienia() {
 	);
 }
 
-export default MagazynZamowienia;
+export default RejestrZlecenMagazyn;

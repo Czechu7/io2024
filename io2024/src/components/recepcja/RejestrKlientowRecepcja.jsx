@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import RKAddClient from './RKAddClient';
-
+import RecepcjaHeader from './RecepcjaHeader';
 
 function RejestrKlientowRecepcja() {
   const [clients, setClients] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const history = useNavigate();
 
   const fetchData = async () => {
@@ -60,13 +61,30 @@ function RejestrKlientowRecepcja() {
     }
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredClients = clients.filter((client) => {
+    const fullName = `${client.firstName} ${client.lastName}`;
+    return fullName.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   return (
     <div className="Recepcja">
+      <RecepcjaHeader></RecepcjaHeader>
       <h1>Rejestr klientów</h1>
-      <Table striped  hover className="Table">
+      <div>
+        <input
+          type="text"
+          placeholder="Wyszukaj po imieniu i nazwisku"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      </div>
+      <Table striped hover className="Table">
         <thead>
           <tr>
-            <th>#</th>
             <th>Imię</th>
             <th>Nazwisko</th>
             <th>Numer telefonu</th>
@@ -75,9 +93,8 @@ function RejestrKlientowRecepcja() {
           </tr>
         </thead>
         <tbody>
-          {clients.map((client) => (
+          {filteredClients.map((client) => (
             <tr key={client.id}>
-              <td>{client.id}</td>
               <td>{client.firstName}</td>
               <td>{client.lastName}</td>
               <td>{client.phoneNumber}</td>
@@ -94,9 +111,9 @@ function RejestrKlientowRecepcja() {
           ))}
         </tbody>
       </Table>
-      
+
       <RKAddClient onClientAdded={handleClientAdded} />
-<br></br>
+      <br></br>
       <div>
         <Button type="button" onClick={() => history.push('/recepcja')}>
           Powrót do recepcji

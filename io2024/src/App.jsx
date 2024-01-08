@@ -23,6 +23,8 @@ import MagazynEditOrder from "./components/magazyn/MagazynEditOrder.jsx";
 import MagazynKosztorys from "./components/magazyn/MagazynKosztorys.jsx";
 import ZatwierdzanieKosztorysu from "./components/kierownik/ZatwierdzanieKosztorysu.jsx";
 import PlanFinansowyFirmy from "./components/kierownik/PlanFinansowyFirmy.jsx";
+import RKPlatnosci from "./components/recepcja/RKPlatnosci.jsx";
+import RKZlecenia from "./components/recepcja/RKZlecenia.jsx";
 
 function App() {
 	return (
@@ -74,6 +76,8 @@ function App() {
 					element={<ZatwierdzanieKosztorysu />}
 				/>
 				<Route path="/planfinansowyfirmy" element={<PlanFinansowyFirmy />} />
+				<Route path="/rejestrplatnosci" element={<RKPlatnosci />} />
+				<Route path="/rejestrzlecenrecepcja" element={<RKZlecenia />} />
 			</Routes>
 		</Router>
 	);
