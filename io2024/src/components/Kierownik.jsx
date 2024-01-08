@@ -2,13 +2,14 @@ import "../css/Kierownik.css";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { Link, useNavigate } from "react-router-dom";
+import KierownikHeader from "./kierownik/KierownikHeader";
 
 function Kierownik() {
 	return (
 		//początek
 		<div>
 			<div className="Kierownik">
-				<h1>Kierownik</h1>
+				<KierownikHeader></KierownikHeader>
 			</div>
 			<Link to={"/rejestrzlecenkierownik"}>
 				<div>
