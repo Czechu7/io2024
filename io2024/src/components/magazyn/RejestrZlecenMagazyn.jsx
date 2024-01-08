@@ -6,7 +6,7 @@ import '../../css/magazyn/RejestrMagazynowy.css';
 import MagazynHeader from './MagazynHeader';
 import RejestrZlecen from '../Mechanik/RejestrZlecen';
 
-function MagazynZamowienia() {
+function RejestrZlecenMagazyn() {
     return (
     <div className="Magazyn">
       <MagazynHeader></MagazynHeader>
@@ -17,4 +17,4 @@ function MagazynZamowienia() {
   );
 }
 
-export default MagazynZamowienia;
+export default RejestrZlecenMagazyn;
