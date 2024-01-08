@@ -3,9 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import WorkerTable from "./WorkerTable";
 import KierownikAddWorker from "./KierownikAddWorker";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import RejestrKlientowRecepcja from "../recepcja/RejestrKlientowRecepcja";
 
 const RejestrPracownikow = () => {
 	const [workers, setWorkers] = useState([]);
+	const [searchTerm, setSearchTerm] = useState("");
 	const history = useNavigate();
 
 	const fetchData = async () => {
@@ -59,10 +62,30 @@ const RejestrPracownikow = () => {
 		}
 	};
 
+	const filteredWorkers = workers.filter(
+		(worker) =>
+			worker.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			worker.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			worker.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			worker.salary.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			worker.dateofbirth.toLowerCase().includes(searchTerm.toLowerCase())
+	);
+
 	return (
 		<div className="Kierownik">
 			<h1>Rejestr pracowników</h1>
-			<WorkerTable workers={workers} onDeleteWorker={handleDeleteWorker} />
+			<Form.Group controlId="formSearch">
+				<Form.Control
+					type="text"
+					placeholder="Wyszukaj pracownika"
+					value={searchTerm}
+					onChange={(e) => setSearchTerm(e.target.value)}
+				/>
+			</Form.Group>
+			<WorkerTable
+				workers={filteredWorkers}
+				onDeleteWorker={handleDeleteWorker}
+			/>
 
 			<KierownikAddWorker onWorkerAdded={handleWorkerAdded} />
 			<br />
