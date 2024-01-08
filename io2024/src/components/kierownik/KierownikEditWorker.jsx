@@ -7,7 +7,7 @@ const KierownikEditWorker = ({ onWorkerUpdated }) => {
 	const [workerData, setWorkerData] = useState({
 		firstName: "",
 		lastName: "",
-		age: "",
+		dateofbirth: "",
 		position: "",
 		salary: "",
 		phoneNumber: "",
@@ -106,11 +106,11 @@ const KierownikEditWorker = ({ onWorkerUpdated }) => {
 			</label>
 			<br />
 			<label>
-				Wiek:
+				Data urodzenia:
 				<input
 					type="text"
-					name="age"
-					value={workerData.age}
+					name="dateofbirth"
+					value={workerData.dateofbirth}
 					onChange={handleChange}
 				/>
 			</label>

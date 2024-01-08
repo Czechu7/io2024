@@ -14,50 +14,58 @@ import RejestrKlientowRecepcja from "./components/recepcja/RejestrKlientowRecepc
 import RejestrPracownikow from "./components/kierownik/RejestrPracownikow.jsx";
 import RejestrZlecenKierownik from "./components/kierownik/RejestrZlecenKierownik.jsx";
 import RejestrFinansow from "./components/kierownik/RejestrFinansow.jsx";
-import DodanieNowegoZlecenia from "./components/kierownik/DodanieNowegoZlecenia.jsx";
-import HistoriaZlecen from "./components/kierownik/HistoriaZlecen.jsx";
-import ZamowioneCzesci from "./components/kierownik/ZamowioneCzesci.jsx";
 import RKEditClient from "./components/recepcja/RKEditClient.jsx";
 import KierownikEditWorker from "./components/kierownik/KierownikEditWorker.jsx";
-import MagazynEditClient from './components/recepcja/RKEditClient.jsx';
-import RejestrMagazynowy from './components/magazyn/RejestrMagazynowy.jsx';
-import MagazynEditPart from './components/magazyn/MagazynEditPart.jsx';
-import MagazynZamowienia from './components/magazyn/MagazynZamowienia.jsx';
-import MagazynEditOrder from './components/magazyn/MagazynEditOrder.jsx';
+import MagazynEditClient from "./components/recepcja/RKEditClient.jsx";
+import RejestrMagazynowy from "./components/magazyn/RejestrMagazynowy.jsx";
+import MagazynEditPart from "./components/magazyn/MagazynEditPart.jsx";
+import MagazynZamowienia from "./components/magazyn/MagazynZamowienia.jsx";
+import MagazynEditOrder from "./components/magazyn/MagazynEditOrder.jsx";
 import MagazynKosztorys from "./components/magazyn/MagazynKosztorys.jsx";
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<LoginPage/>} />
-        <Route path='/home' element={<MainPage/>} />
-        <Route path='/mechanik' element={<Mechanik/>} />
-        <Route path='/magazyn' element={<Magazyn/>} />
-        <Route path='/kierownik' element={<Kierownik/>} />
-        <Route path='/recepcja' element={<Recepcja/>} />
-        <Route path='/rejestrzlecen' element={<RejestrZlecen/>} />
-        <Route path='/kosztorysmechanik' element={<KosztorysMechanik/>} />
-        <Route path='/rejestrzlecenmagazyn' element={<RejestrZlecenMagazyn/>} />
-        <Route path='/rejestrklientowrecepcja' element={<RejestrKlientowRecepcja/>} />
-        <Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
-        <Route path='/edit/:clientId' element={<MagazynEditClient onClientUpdated={() => {}} />} />
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<LoginPage />} />
+				<Route path="/home" element={<MainPage />} />
+				<Route path="/mechanik" element={<Mechanik />} />
+				<Route path="/magazyn" element={<Magazyn />} />
+				<Route path="/kierownik" element={<Kierownik />} />
+				<Route path="/recepcja" element={<Recepcja />} />
+				<Route path="/rejestrzlecen" element={<RejestrZlecen />} />
+				<Route path="/kosztorysmechanik" element={<KosztorysMechanik />} />
+				<Route
+					path="/rejestrzlecenmagazyn"
+					element={<RejestrZlecenMagazyn />}
+				/>
+				<Route
+					path="/rejestrklientowrecepcja"
+					element={<RejestrKlientowRecepcja />}
+				/>
+				<Route path="/rejestrpracownikow" element={<RejestrPracownikow />} />
+				<Route
+					path="/edit/:clientId"
+					element={<MagazynEditClient onClientUpdated={() => {}} />}
+				/>
 				<Route
 					path="/rejestrzlecenkierownik"
 					element={<RejestrZlecenKierownik />}
 				/>
 				<Route path="/rejestrfinansow" element={<RejestrFinansow />} />
+				<Route path="/rejestrmagazynowy" element={<RejestrMagazynowy />} />
 				<Route
-					path="/dodanienowegozlecenia"
-					element={<DodanieNowegoZlecenia />}
+					path="/editpart/:partId"
+					element={<MagazynEditPart onClientUpdated={() => {}} />}
 				/>
-				<Route path="/zamowioneczesci" element={<ZamowioneCzesci />} />
-				<Route path="/historiazlecen" element={<HistoriaZlecen />} />
-        <Route path='/rejestrmagazynowy' element={<RejestrMagazynowy />} />
-        <Route path='/editpart/:partId' element={<MagazynEditPart onClientUpdated={() => {}} />} />
-        <Route path='/magazynzamowienia' element={<MagazynZamowienia />} />
-        <Route path='/editorder/:orderId' element={<MagazynEditOrder onClientUpdated={() => {}} />} />
-        <Route path="/editworker/:workerId" element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
+				<Route path="/magazynzamowienia" element={<MagazynZamowienia />} />
+				<Route
+					path="/editorder/:orderId"
+					element={<MagazynEditOrder onClientUpdated={() => {}} />}
+				/>
+				<Route
+					path="/editworker/:workerId"
+					element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
 				/>
         <Route path="/magazynkosztorys" element={<MagazynKosztorys/>} />
         <Route path="/rejestrzlecenmechanik" element={<RejestrZlecenMechanik/>} />
