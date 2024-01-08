@@ -50,10 +50,29 @@ function RejestrZlecen() {
 
   useEffect(() => {
     fetchData();
-  }, []); // Dodaj pustą zależność, aby useEffect wykonał się tylko raz
+  }, []); 
 
   const onOrderAdded = () => {
-    fetchData(); // Wywołaj funkcję fetcha po dodaniu nowego zlecenia
+    fetchData();
+  };
+
+  const deleteOrder = async (orderId) => {
+    try {
+      await fetch(
+        `https://carmategarage-58a29-default-rtdb.europe-west1.firebasedatabase.app/zlecenia/${orderId}.json`,
+        {
+          method: 'DELETE',
+        }
+      );
+      fetchData();
+    } catch (error) {
+      console.error('Error deleting order:', error);
+    }
+  };
+
+  const editOrder = (orderId) => {
+    // Implementuj funkcję modyfikacji zlecenia
+    // Możesz użyć lokalnego stanu, modala lub nowej strony do edycji.
   };
 
   const filterOrders = () => {
@@ -92,6 +111,7 @@ function RejestrZlecen() {
             <th>Cena części</th>
             <th>Data</th>
             <th>Imię i nazwisko</th>
+            <th>Akcje</th>
           </tr>
         </thead>
         <tbody>
@@ -105,14 +125,19 @@ function RejestrZlecen() {
                 <td>{order.cenaCzesci}</td>
                 <td>{order.data}</td>
                 <td>{`${clientData.firstName || ''} ${clientData.lastName || ''}`}</td>
+                <td>
+                  <Button variant="danger" onClick={() => deleteOrder(order.id)}>
+                    Usuń
+                  </Button>{' '}
+                  <Button variant="info" onClick={() => editOrder(order.id)}>
+                    Edytuj
+                  </Button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </Table>
-      <Button type="submit" href="/mechanik">
-        Powrót
-      </Button>{' '}
       <MechanikAddOrder onOrderAdded={onOrderAdded} />
     </div>
   );
