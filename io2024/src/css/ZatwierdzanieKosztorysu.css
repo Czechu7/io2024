@@ -1,0 +1,55 @@
+.ZatwierdzanieKosztorysu {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+input {
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+th,
+td {
+	border: 1px solid #ffffff;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #2b9c2f;
+}
+
+label {
+	display: block;
+	margin-bottom: 0;
+}
+
+.btnm {
+	background-color: 2b9c2f;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.PrzyciskiDolStrony {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.PrzyciskiDolStrony div {
+	flex: 1;
+	margin-right: 10px;
+}

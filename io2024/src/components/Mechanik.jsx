@@ -4,13 +4,18 @@ import MechanikHeader from './mechanik/MechanikHeader';
 
 function Mechanik() {
   return (
-    <div>
-      <MechanikHeader></MechanikHeader>
-    <div><Button type="submit"  href="/rejestrzlecenmechanik" >Rejestr zleceń</Button></div>
-    <div><Button type="submit"  href="/kosztorysmechanik" >Kosztorys</Button></div>
-    <div><Button type="submit"  href="/home" >Strona główna</Button></div>
+  <div className="MainPage">
+  <div className="ButtonContainer">
+        <Button className="Button" type="submit" href="rejestrzlecen">Rejestr zleceń
+    </Button>
+
+    <Button className="Button" type="submit" href="kosztorysmechanik">
+    Kosztorys
+    </Button>
 
     </div>
+  </div>
+
   );
 }
 

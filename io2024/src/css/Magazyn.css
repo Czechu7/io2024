@@ -53,3 +53,34 @@
     background-color: #0056b3; 
     color: white; 
 }
+
+.MainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .ButtonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 600px; /* Możesz dostosować maksymalną szerokość kontenera według własnych preferencji */
+  }
+  
+  .Button {
+    background-color: #2b9c2f;
+    color: white;
+    padding: 30px 64px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin: 20px 30px;
+    width: 15rem;
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+  
+  .Button:hover {
+    background-color: #2980b9;
+  }

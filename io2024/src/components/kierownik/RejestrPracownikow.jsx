@@ -4,7 +4,7 @@ import WorkerTable from "./WorkerTable";
 import KierownikAddWorker from "./KierownikAddWorker";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import RejestrKlientowRecepcja from "../recepcja/RejestrKlientowRecepcja";
+import KierownikHeader from "./KierownikHeader";
 
 const RejestrPracownikow = () => {
 	const [workers, setWorkers] = useState([]);
@@ -73,6 +73,7 @@ const RejestrPracownikow = () => {
 
 	return (
 		<div className="Kierownik">
+			<KierownikHeader></KierownikHeader>
 			<h1>Rejestr pracowników</h1>
 			<Form.Group controlId="formSearch">
 				<Form.Control
