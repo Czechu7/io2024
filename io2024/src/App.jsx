@@ -7,6 +7,7 @@ import Kierownik from "./components/Kierownik.jsx";
 import Recepcja from "./components/Recepcja.jsx";
 import RejestrZlecen from "./components/mechanik/RejestrZlecen.jsx";
 import KosztorysMechanik from "./components/mechanik/KosztorysMechanik.jsx";
+import RejestrZlecenMechanik from "./components/mechanik/RejestrZlecenMechanik.jsx";
 import RejestrZlecenMagazyn from "./components/magazyn/RejestrZlecenMagazyn.jsx";
 import LoginPage from "./components/auth/LoginPage.jsx";
 import RejestrKlientowRecepcja from "./components/recepcja/RejestrKlientowRecepcja.jsx";
@@ -70,6 +71,7 @@ function App() {
 					path="/editworker/:workerId"
 					element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
 				/>
+        <Route path="/rejestrzlecenmechanik" element={<RejestrZlecenMechanik/>} />
 				<Route path="/magazynkosztorys" element={<MagazynKosztorys />} />
 				<Route
 					path="/zatwierdzaniekosztorysu"

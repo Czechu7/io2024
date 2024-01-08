@@ -1,5 +1,6 @@
 import '../css/Mechanik.css'
 import Button from 'react-bootstrap/Button';
+import MechanikHeader from './mechanik/MechanikHeader';
 
 function Mechanik() {
   return (
@@ -11,7 +12,6 @@ function Mechanik() {
     <Button className="Button" type="submit" href="kosztorysmechanik">
     Kosztorys
     </Button>
-
 
     </div>
   </div>
