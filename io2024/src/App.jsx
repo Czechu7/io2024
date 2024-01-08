@@ -21,6 +21,8 @@ import MagazynEditPart from "./components/magazyn/MagazynEditPart.jsx";
 import MagazynZamowienia from "./components/magazyn/MagazynZamowienia.jsx";
 import MagazynEditOrder from "./components/magazyn/MagazynEditOrder.jsx";
 import MagazynKosztorys from "./components/magazyn/MagazynKosztorys.jsx";
+import RKPlatnosci from "./components/recepcja/RKPlatnosci.jsx";
+import RKZlecenia from "./components/recepcja/RKZlecenia.jsx";
 
 function App() {
 	return (
@@ -67,6 +69,8 @@ function App() {
 					element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
 				/>
 				<Route path="/magazynkosztorys" element={<MagazynKosztorys />} />
+				<Route path="/rejestrplatnosci" element={<RKPlatnosci />} />
+				<Route path="/rejestrzlecenrecepcja" element={<RKZlecenia />} />
 			</Routes>
 		</Router>
 	);
