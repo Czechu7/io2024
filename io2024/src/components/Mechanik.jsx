@@ -4,6 +4,8 @@ import MechanikHeader from './mechanik/MechanikHeader';
 
 function Mechanik() {
   return (
+    <div>
+      <MechanikHeader></MechanikHeader>
   <div className="MainPage">
   <div className="ButtonContainer">
         <Button className="Button" type="submit" href="rejestrzlecen">Rejestr zleceń
@@ -15,7 +17,7 @@ function Mechanik() {
 
     </div>
   </div>
-
+</div>
   );
 }
 
