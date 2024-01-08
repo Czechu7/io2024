@@ -7,7 +7,7 @@ function MagazynHeader() {
     const navigate = useNavigate();
 
  return (
-    <div class="header"> 
+    <div className="header"> 
      <Button className="back-button" onClick={() => navigate(-1)}>Powrót</Button>
      <h1>Magazyn</h1>
      <div> 
