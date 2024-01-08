@@ -9,7 +9,7 @@ function KosztorysMechanik() {
 <input type="text" id="nazwa-input" placeholder="Wprowadź nazwę części" />
 <input type="text" className='textarea' id="nazwa-input" placeholder="Wprowadź ilość roboczogodzin" />
 <button className='btnm' id="przeslij-button">Prześlij</button>
-      <Button className='btnm' type="submit"  href="/" >Powrót</Button>{' '}
+      <Button className='btnm' type="submit"  href="/mechanik" >Powrót</Button>{' '}
     </div>
   );
 }
