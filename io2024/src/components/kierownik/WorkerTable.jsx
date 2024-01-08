@@ -11,7 +11,7 @@ const WorkerTable = ({ workers, onDeleteWorker }) => {
 					<th>#</th>
 					<th>Imię</th>
 					<th>Nazwisko</th>
-					<th>Wiek</th>
+					<th>Data urodzenia</th>
 					<th>Stanowisko</th>
 					<th>Wynagrodzenie</th>
 					<th>Numer telefonu</th>
@@ -25,7 +25,7 @@ const WorkerTable = ({ workers, onDeleteWorker }) => {
 						<td>{worker.id}</td>
 						<td>{worker.firstName}</td>
 						<td>{worker.lastName}</td>
-						<td>{worker.age}</td>
+						<td>{worker.dateofbirth}</td>
 						<td>{worker.position}</td>
 						<td>{worker.salary}</td>
 						<td>{worker.phoneNumber}</td>

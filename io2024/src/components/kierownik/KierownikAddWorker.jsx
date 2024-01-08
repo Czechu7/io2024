@@ -4,7 +4,7 @@ const KierownikAddWorker = ({ onWorkerAdded }) => {
 	const [newWorker, setNewWorker] = useState({
 		firstName: "",
 		lastName: "",
-		age: "",
+		dateofbirth: "",
 		position: "",
 		salary: "",
 		phoneNumber: "",
@@ -43,7 +43,7 @@ const KierownikAddWorker = ({ onWorkerAdded }) => {
 			setNewWorker({
 				firstName: "",
 				lastName: "",
-				age: "",
+				dateofbirth: "",
 				position: "",
 				salary: "",
 				phoneNumber: "",
@@ -84,11 +84,11 @@ const KierownikAddWorker = ({ onWorkerAdded }) => {
 			</label>
 			<br />
 			<label>
-				Wiek:
+				Data urodzenia:
 				<input
 					type="text"
-					name="age"
-					value={newWorker.age}
+					name="dateofbirth"
+					value={newWorker.dateofbirth}
 					onChange={handleChange}
 					required
 				/>
