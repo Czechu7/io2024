@@ -6,7 +6,7 @@ import "../../css/magazyn/RejestrMagazynowy.css";
 import MagazynHeader from "./MagazynHeader";
 import RejestrZlecen from "../mechanik/RejestrZlecen";
 
-function MagazynZamowienia() {
+function RejestrZlecenMagazyn() {
 	return (
 		<div className="Magazyn">
 			<MagazynHeader></MagazynHeader>
