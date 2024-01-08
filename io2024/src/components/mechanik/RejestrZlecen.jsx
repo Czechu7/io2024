@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import MechanikAddOrder from './MechanikAddOrder';
 
-function RejestrZlecenMechanik() {
+function RejestrZlecen() {
   const [orders, setOrders] = useState([]);
   const [clientsData, setClientsData] = useState({});
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchData = async () => {
     try {
@@ -55,22 +56,46 @@ function RejestrZlecenMechanik() {
     fetchData(); // Wywołaj funkcję fetcha po dodaniu nowego zlecenia
   };
 
+  const filterOrders = () => {
+    return orders.filter((order) => {
+      const clientData = clientsData[order.klientId] || {};
+      const searchRegex = new RegExp(searchTerm, 'i');
+      return (
+        searchRegex.test(order.nrUsterki) ||
+        searchRegex.test(order.nrKatalogowy) ||
+        searchRegex.test(order.nazwaCzesci) ||
+        searchRegex.test(order.cenaCzesci.toString()) ||
+        searchRegex.test(order.data) ||
+        searchRegex.test(`${clientData.firstName} ${clientData.lastName}`)
+      );
+    });
+  };
+
   return (
-    <div className="Table">
-      <h1>Rejestr Zleceń Mechanika</h1>
+    <div className="Table text-center">
+      <div>
+        <label htmlFor="search">Wyszukaj: </label>
+        <input
+          type="text"
+          id="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <Button onClick={() => setSearchTerm('')}>Wyczyść</Button>
+      </div>
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>nrUsterki</th>
-            <th>nrKatalogowy</th>
-            <th>nazwaCzesci</th>
-            <th>cenaCzesci</th>
+            <th>Numer usterki</th>
+            <th>Numer katalogowy</th>
+            <th>Nazwa części</th>
+            <th>Cena części</th>
             <th>Data</th>
-            <th>imieNazwisko</th>
+            <th>Imię i nazwisko</th>
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => {
+          {filterOrders().map((order) => {
             const clientData = clientsData[order.klientId] || {};
             return (
               <tr key={order.id}>
@@ -85,7 +110,7 @@ function RejestrZlecenMechanik() {
           })}
         </tbody>
       </Table>
-      <Button type="submit" href="/">
+      <Button type="submit" href="/mechanik">
         Powrót
       </Button>{' '}
       <MechanikAddOrder onOrderAdded={onOrderAdded} />
@@ -93,4 +118,4 @@ function RejestrZlecenMechanik() {
   );
 }
 
-export default RejestrZlecenMechanik;
+export default RejestrZlecen;

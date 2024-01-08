@@ -6,15 +6,15 @@ import MagazynHeader from './magazyn/MagazynHeader';
 
 function Magazyn() {
  return (
-    <body>
+    <div>
     <MagazynHeader></MagazynHeader>
-    <div class="btn-container">
+    <div className="btn-container">
         <Button className="btnm" href="rejestrzlecenmagazyn">Rejestr Zleceń</Button>
-        <Button className="btnm" href="rejestrzlecenmagazyn">Kosztorys</Button>
+        <Button className="btnm" href="magazynkosztorys">Kosztorys</Button>
         <Button className="btnm" href="magazynzamowienia">Zamówienia</Button>
         <Button className="btnm" href="rejestrmagazynowy">Rejestr magazynowy</Button>
     </div>
-</body>
+</div>
  );
 }
 
