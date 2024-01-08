@@ -4,14 +4,14 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import '../../css/magazyn/RejestrMagazynowy.css';
 import MagazynHeader from './MagazynHeader';
-import RejestrZlecenMechanik from '../Mechanik/RejestrZlecenMechanik';
+import RejestrZlecen from '../Mechanik/RejestrZlecen';
 
 function MagazynZamowienia() {
     return (
     <div className="Magazyn">
       <MagazynHeader></MagazynHeader>
       <div>
-        <RejestrZlecenMechanik></RejestrZlecenMechanik>
+        <RejestrZlecen></RejestrZlecen>
       </div>
     </div>
   );
