@@ -23,6 +23,7 @@ import RejestrMagazynowy from './components/magazyn/RejestrMagazynowy.jsx';
 import MagazynEditPart from './components/magazyn/MagazynEditPart.jsx';
 import MagazynZamowienia from './components/magazyn/MagazynZamowienia.jsx';
 import MagazynEditOrder from './components/magazyn/MagazynEditOrder.jsx';
+import MagazynKosztorys from "./components/magazyn/MagazynKosztorys.jsx";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
         <Route path='/editorder/:orderId' element={<MagazynEditOrder onClientUpdated={() => {}} />} />
         <Route path="/editworker/:workerId" element={<KierownikEditWorker onWorkerUpdated={() => {}} />}
 				/>
+        <Route path="/magazynkosztorys" element={<MagazynKosztorys/>} />
 			</Routes>
 		</Router>
 	);
