@@ -3,7 +3,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import "../../css/magazyn/RejestrMagazynowy.css";
-import RejestrZlecen from " ../Mechanik/RejestrZlecen";
+import RejestrZlecen from "../mechanik/RejestrZlecen";
 
 function RejestrZlecenKierownik() {
 	return (
